@@ -1,0 +1,24 @@
+{
+  "name": "csci-e114-dmtroyer-final-project",
+  "version": "1.0.0",
+  "description": "Final Project for CSCI E114",
+  "main": "index.js",
+  "scripts": {
+    "serve": "eleventy --serve --port 8000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cscie114/csci-e-114-final-project-dmtroyer.git"
+  },
+  "author": "David Troyer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cscie114/csci-e-114-final-project-dmtroyer/issues"
+  },
+  "homepage": "https://github.com/cscie114/csci-e-114-final-project-dmtroyer#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-fetch": "^4.0.1"
+  }
+}

@@ -5,3 +5,8 @@ Your README.md file should have:
 
 - Detailed instructions to run your site.
 - The URL to where you are hosting the site on web.
+
+## Features
+
+1. Card Search
+1. Card Comments using Mongodb

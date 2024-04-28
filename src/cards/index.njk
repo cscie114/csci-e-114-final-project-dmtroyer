@@ -1,0 +1,9 @@
+---
+layout: layout.njk
+title: Cards of Outlaws of Thunder Junction
+---
+<h1>{{ title }}</h1>
+
+{% for card in data %}
+<p>{{ card.name }}</p>
+{% endfor %}
