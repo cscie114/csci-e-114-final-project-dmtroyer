@@ -7,9 +7,26 @@ title: Outlaws Outpost
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/styles/main.css">
+    <link rel="stylesheet" href="https://use.typekit.net/iyu1xgm.css">
     <title>{{ title }}</title>
   </head>
   <body>
-    {{ content | safe }}
+    <header>
+      <h1>Outlaws of Thunder Junction</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/cards/">Cards</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      {{ content | safe }}
+    </main>
+    <footer>
+      <p>Final Project by David Troyer for Harvard Extension School's CSCI E-114: Web Application Development with Jamstack</p>
+      <p>This website is unofficial Fan Content permitted under the Wizards of the Coast Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. &copy; Wizards of the Coast LLC.</p>
+    </footer>
   </body>
 </html>

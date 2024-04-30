@@ -1,9 +1,16 @@
 ---
 layout: layout.njk
 title: Cards of Outlaws of Thunder Junction
+pagination:
+  data: collections.cards
+  size: 9
+  alias: cards
 ---
-<h1>{{ title }}</h1>
 
-{% for card in data %}
-<p>{{ card.name }}</p>
+<div class="grid">
+{% for card in cards %}
+  <a href="{{ card.page.url }}" class="card">
+    <img src="{{ card.data.image }}" alt="{{ card.data.title }}">
+  </a>
 {% endfor %}
+</div>

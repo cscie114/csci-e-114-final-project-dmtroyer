@@ -1,0 +1,26 @@
+---
+layout: layout.njk
+pagination:
+  data: data
+  size: 1
+  alias: card
+  addAllPagesToCollections: true
+tags: cards
+permalink: "cards/{{ card.name | slugify }}-{{ card.collector_number }}/index.html"
+eleventyComputed:
+  title: "{{ card.name | safe }}"
+  image: "{{ card.image_uris.normal }}"
+---
+
+<div class="card-detail">
+  <img src="{{ card.image_uris.normal }}" alt="{{ card.name }}">
+
+  <div class="card-info">
+    <h1>{{ card.name }}</h1>
+
+    <p><strong>Card Type</strong>: {{ card.type_line }}</p>
+    <p><strong>Rarity</strong>: {{ card.rarity | capitalize }}</p>
+    <p><strong>Text</strong>: <em>{{ card.oracle_text }}</em></p>
+    <p><strong>Artist</strong>: {{ card.artist }}</p>
+  </div>
+</div>

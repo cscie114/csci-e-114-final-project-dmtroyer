@@ -1,0 +1,116 @@
+body {
+  background: #f4f1ee;
+  color: #3d2b1f;
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3 {
+  font-family: 'Bourbon', serif;
+}
+
+main {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+header {
+  background: url('/assets/images/wood-short.jpg') repeat;
+  color: #f4f1ee;
+  padding: 10px 40px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 4em;
+  text-shadow: 4px 4px 0px #3d2b1f;
+  transform: rotate(-5deg) skew(-5deg);
+}
+
+header nav {
+  margin-top: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  font-family: 'hwt-american-outline', sans-serif;
+  font-size: 1.2em;
+  color: #f4f1ee;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 0 #3d2b1f;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  transition: filter 0.3s ease;
+}
+
+.card img:hover {
+  filter: brightness(80%);
+}
+
+.card h3 {
+  margin: 10px 0;
+}
+
+.card p {
+  text-align: center;
+  color: #666;
+  padding: 0 10px;
+}
+
+.card-detail img {
+  float: left;
+  border-radius: 15px;
+  margin: 10px 40px 40px 0;
+  box-shadow: 5px 5px 15px gray;
+}
+
+
+footer {
+  clear: both;
+  background-color: #282828;
+  color: #cccccc;
+  font-family: Arial, sans-serif;
+  padding: 20px 200px;
+  font-size: 14px;
+}
