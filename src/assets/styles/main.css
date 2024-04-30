@@ -15,8 +15,13 @@ a:hover {
   text-decoration: underline;
 }
 
-h1, h2, h3 {
-  font-family: 'Bourbon', serif;
+h2, h3 {
+  font-family: 'french-clarendon-ornamented', serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4rem;
+  letter-spacing: 0.01em;
+  margin: 0;
 }
 
 main {
@@ -33,9 +38,11 @@ header {
 }
 
 header h1 {
-  font-size: 4em;
+  font-family: 'Bourbon', 'Georgia', serif;
+  font-size: 5em;
   text-shadow: 4px 4px 0px #3d2b1f;
   transform: rotate(-5deg) skew(-5deg);
+  margin: 30px;
 }
 
 header nav {
@@ -109,14 +116,16 @@ nav ul li a {
   display: flex;
   justify-content: space-between;
   padding: 0 30px;
+  font-family: 'hwt-american-shopworn', sans-serif;
   font-size: 1.2rem;
+  margin: 10px 0;
 }
 
 footer {
   clear: both;
   background-color: #282828;
   color: #cccccc;
-  font-family: Arial, sans-serif;
+  font-family: 'Georgia', serif;
   padding: 20px 200px;
   font-size: 14px;
 }
