@@ -1,0 +1,5 @@
+<nav class="pagination">
+  <span>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">&lt; Previous</a>{% else %}&lt; Previous{% endif %}</span>
+  <span>Page {{ pagination.pageNumber }} of {{ pagination.pages.length }}</span>
+  <span>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next &gt;</a>{% else %}Next &gt;{% endif %}</li>
+</nav>

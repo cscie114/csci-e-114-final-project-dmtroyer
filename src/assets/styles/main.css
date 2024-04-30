@@ -105,6 +105,12 @@ nav ul li a {
   box-shadow: 5px 5px 15px gray;
 }
 
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  font-size: 1.2rem;
+}
 
 footer {
   clear: both;
