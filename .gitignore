@@ -5,3 +5,6 @@ public
 .env
 .DS_Store
 .vscode
+
+# Local Netlify folder
+.netlify

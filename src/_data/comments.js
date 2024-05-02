@@ -12,15 +12,11 @@ const client = new MongoClient(process.env.MONGODB_CONNECTION_STRING, {
 
 module.exports = async function() {
   try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
-    // Send a ping to confirm a successful connection
     const collection = client.db(process.env.MONGODB_DB_NAME).collection("comments");
-    console.log("Pinged your deployment. You successfully connected to MongoDB!");
     const results = await collection.find({}).toArray();
+
     return results;
   } finally {
-    // Ensures that the client will close when you finish/error
     await client.close();
   }
 }

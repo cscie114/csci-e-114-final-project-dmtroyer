@@ -4,6 +4,7 @@
   "description": "Final Project for CSCI E114",
   "main": "index.js",
   "scripts": {
+    "develop": "netlify dev --target-port 8000",
     "serve": "eleventy --serve --port 8000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,7 +20,8 @@
   "homepage": "https://github.com/cscie114/csci-e-114-final-project-dmtroyer#readme",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-fetch": "^4.0.1"
+    "@11ty/eleventy-fetch": "^4.0.1",
+    "netlify-cli": "^17.23.1"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
