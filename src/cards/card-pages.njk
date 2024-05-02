@@ -15,12 +15,27 @@ eleventyComputed:
 <div class="card-detail">
   <img src="{{ card.image_uris.normal }}" alt="{{ card.name }}">
 
-  <div class="card-info">
+  <div class="card-info" data-card-id={{ card.id }}>
     <h2>{{ card.name }}</h2>
 
     <p><strong>Card Type</strong>: {{ card.type_line }}</p>
     <p><strong>Rarity</strong>: {{ card.rarity | capitalize }}</p>
     <p><strong>Text</strong>: <em>{{ card.oracle_text }}</em></p>
     <p><strong>Artist</strong>: {{ card.artist }}</p>
+  </div>
+
+  <div class="comments">
+    <h3>Comments</h3>
+    <ul id="comments-list">
+      {% for comment in comments | commentsForId(card.id) %}
+        <li class="comment">{{ comment.text }}</li>
+      {% endfor %}
+    </ul>
+    <form action="/comments" method="post" class="comment-form">
+      <input type="hidden" name="cardId" value="{{ card.id }}">
+      <label for="comment">Add a comment:</label>
+      <input type="text" name="comment" id="comment">
+      <button type="submit">Submit</button>
+    </form>
   </div>
 </div>

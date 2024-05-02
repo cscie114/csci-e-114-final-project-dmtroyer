@@ -10,3 +10,9 @@ Your README.md file should have:
 
 1. Card Search
 1. Card Comments using Mongodb
+
+
+## TODO
+
+### Include Comments at build time
+
