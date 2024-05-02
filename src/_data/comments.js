@@ -12,7 +12,7 @@ const client = new MongoClient(process.env.MONGODB_CONNECTION_STRING, {
 
 module.exports = async function() {
   try {
-    const collection = client.db(process.env.MONGODB_DB_NAME).collection(proccess.env.MONGODB_COLLECTION_NAME);
+    const collection = client.db(process.env.MONGODB_DB_NAME).collection(process.env.MONGODB_COLLECTION_NAME);
     const results = await collection.find({}).toArray();
 
     return results;

@@ -4,6 +4,7 @@
   "description": "Final Project for CSCI E114",
   "main": "index.js",
   "scripts": {
+    "build": "eleventy",
     "develop": "netlify dev --target-port 8000",
     "serve": "eleventy --serve --port 8000",
     "test": "echo \"Error: no test specified\" && exit 1"
