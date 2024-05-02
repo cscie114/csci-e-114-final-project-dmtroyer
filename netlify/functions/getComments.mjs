@@ -8,6 +8,7 @@ export default async (req, context) => {
     const cardId = url.searchParams.get("cardId");
     const lastBuildDate = decodeURIComponent(url.searchParams.get("lastBuildDate"));
 
+    await client.connect();
     const database = client.db(process.env.MONGODB_DB_NAME);
     const collection = database.collection(process.env.MONGODB_COLLECTION_NAME);
     const query = {

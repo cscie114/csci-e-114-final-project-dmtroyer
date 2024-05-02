@@ -11,6 +11,7 @@ export default async (req, context) => {
       createdAt: new Date()
     };
 
+    await client.connect();
     const database = client.db(process.env.MONGODB_DB_NAME);
     const collection = database.collection(process.env.MONGODB_COLLECTION_NAME);
     const result = await collection.insertOne(doc);
