@@ -1,15 +1,8 @@
-import { MongoClient, ServerApiVersion } from 'mongodb';
+import { MongoClient } from 'mongodb';
 
-const client = new MongoClient(process.env.MONGODB_CONNECTION_STRING, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
-});
+const client = new MongoClient(process.env.MONGODB_CONNECTION_STRING);
 
 export default async (req, context) => {
-
   try {
     const body = await req.json();
     const doc = {
@@ -18,7 +11,8 @@ export default async (req, context) => {
       createdAt: new Date()
     };
 
-    const collection = client.db(process.env.MONGODB_DB_NAME).collection(process.env.MONGODB_COLLECTION_NAME);
+    const database = client.db(process.env.MONGODB_DB_NAME);
+    const collection = database.collection(process.env.MONGODB_COLLECTION_NAME);
     const result = await collection.insertOne(doc);
 
     return new Response(JSON.stringify(result), {

@@ -1,21 +1,15 @@
-import { MongoClient, ServerApiVersion } from 'mongodb';
+import { MongoClient } from 'mongodb';
 
-const client = new MongoClient(process.env.MONGODB_CONNECTION_STRING, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
-});
+const client = new MongoClient(process.env.MONGODB_CONNECTION_STRING);
 
 export default async (req, context) => {
-
   try {
     const url = new URL(req.url);
     const cardId = url.searchParams.get("cardId");
     const lastBuildDate = decodeURIComponent(url.searchParams.get("lastBuildDate"));
 
-    const collection = client.db(process.env.MONGODB_DB_NAME).collection(process.env.MONGODB_COLLECTION_NAME);
+    const database = client.db(process.env.MONGODB_DB_NAME);
+    const collection = database.collection(process.env.MONGODB_COLLECTION_NAME);
     const query = {
       cardId: cardId,
       createdAt: { $gt: new Date(lastBuildDate) }
