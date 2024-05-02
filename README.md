@@ -1,18 +1,32 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/NGGI9_Zk)
-# Final Project
+# Thunder Junction
 
-Your README.md file should have:
+Final Project for CSCI E-114 by [David Troyer](mailto:dat670@g.harvard.edu)
 
-- Detailed instructions to run your site.
-- The URL to where you are hosting the site on web.
+## About
 
-## Features
+This site features cards from the most recent Magic the Gathering expansion set, [Outlaws of Thunder Junction](https://mtg.fandom.com/wiki/Outlaws_of_Thunder_Junction). Users can leave comments for individual cards.
 
-1. Card Search
-1. Card Comments using Mongodb
+## Page Data
 
+* On build, data for the cards is retrieved from the [Scryfall API](https://scryfall.com/docs/api) and a paginated listing of the cards, as well as individual pages for each card, are generated.
 
-## TODO
+## Extraordinary Distinction
 
-### Include Comments at build time
+The comments for each card is the extraordinary distinction for this project.
 
+* Comments are stored in a MongoDB database.
+* Comments that exist at build time are included on each individual card page.
+* When a card page is loaded in the browser, a netlify function is used to query for comments that have been added since the site was last built, and those are added to the page.
+* Users can add additional comments and those are stored to MongoDB via a netlify function and added to the page.
+
+## Running the project
+
+1. A MongoDB database with an existing collection and properly configured user and password is needed.
+1. The following environment variables are necessary in a `.env` file
+
+    ```properties
+    MONGODB_CONNECTION_STRING=mongodb+srv://<username>:<password>@<cluster_url>/?retryWrites=true&w=majority&appName=<cluster_name>
+    MONGODB_COLLECTION_NAME=<collection-name>
+    MONGODB_DB_NAME=<db-name>
+    ```
+1. Run `npm install` followed by `npm run develop` to run a local netlify development server.

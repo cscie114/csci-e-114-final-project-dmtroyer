@@ -196,6 +196,11 @@ nav ul li a {
   background-color: #0056b3;
 }
 
+.comment-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .pagination {
   display: flex;
   justify-content: space-between;
