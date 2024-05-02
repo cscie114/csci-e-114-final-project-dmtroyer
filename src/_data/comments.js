@@ -1,17 +1,11 @@
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient } = require('mongodb');
 
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(process.env.MONGODB_CONNECTION_STRING, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
-});
+const client = new MongoClient(process.env.MONGODB_CONNECTION_STRING);
 
-module.exports = async function() {
+module.exports = async () => {
   try {
+    await client.connect();
     const collection = client.db(process.env.MONGODB_DB_NAME).collection(process.env.MONGODB_COLLECTION_NAME);
     const results = await collection.find({}).toArray();
 

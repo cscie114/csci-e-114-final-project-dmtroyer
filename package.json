@@ -6,6 +6,7 @@
   "scripts": {
     "build": "eleventy",
     "develop": "netlify dev --target-port 8000",
+    "lint": "eslint ./src ./netlify/functions",
     "serve": "eleventy --serve --port 8000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,6 +23,8 @@
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-fetch": "^4.0.1",
+    "eslint": "^9.1.1",
+    "globals": "^15.1.0",
     "netlify-cli": "^17.23.1"
   },
   "dependencies": {

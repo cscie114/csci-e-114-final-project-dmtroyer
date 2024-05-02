@@ -14,6 +14,8 @@ jobs:
       with:
         node-version: 20
     - run: npm ci
+    - name: Run Linter
+      run: npm run lint
     - name: Build and Deploy
       run: npx netlify deploy --build --prod
       env:
